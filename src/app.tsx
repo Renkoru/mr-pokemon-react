@@ -1,0 +1,51 @@
+import * as React from 'react';
+import { Menu } from '@headlessui/react'
+import './App.css';
+
+function MyDropdown() {
+  return (
+    <Menu>
+      <Menu.Button>More</Menu.Button>
+      <Menu.Items>
+        <Menu.Item>
+          {({ active }) => (
+            <a
+              className={`${active && 'bg-blue-500'}`}
+              href="/account-settings"
+            >
+              Account settings
+            </a>
+          )}
+        </Menu.Item>
+        <Menu.Item>
+          {({ active }) => (
+            <a
+              className={`${active && 'bg-blue-500'}`}
+              href="/account-settings"
+            >
+              Documentation
+            </a>
+          )}
+        </Menu.Item>
+        <Menu.Item disabled>
+          <span className="opacity-75">Invite a friend (coming soon!)</span>
+        </Menu.Item>
+      </Menu.Items>
+    </Menu>
+  )
+}
+
+function App() {
+  return (
+    <div>
+      {'react setup from scratch without cra testing ts'}
+      <div>Changed</div>
+      <MyDropdown />
+      <h1 className="text-8xl font-italic underline hover:mt-8 cursor-pointer">
+        Hello world!
+      </h1>
+    </div>
+  );
+}
+
+export default App;
